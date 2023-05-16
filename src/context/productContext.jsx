@@ -3,7 +3,7 @@ import { createContext } from "react";
 import { useContext, useEffect, useReducer } from "react";
 import reducer from "../reducers/productReducer";
 const AppContext = createContext();
-const API = "https://65.2.175.146:4000/api/v1/getAllProducts";
+const API = "http://65.2.175.146:4000/api/v1/getAllProducts";
 const initialState = {
   isAuthenticated: false,
   isLoading: false,

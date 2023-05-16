@@ -14,7 +14,7 @@ const Order = () => {
     },
     withCredentials: true,
   };
-  const API = "https://65.2.175.146:4000/api/v1";
+  const API = "http://65.2.175.146:4000/api/v1";
   const [shippingInfo, setShippingInfo] = useState({
     name: "",
     address: "",

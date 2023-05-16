@@ -4,7 +4,7 @@ import FormatPrice from "../../helper/FormatPrice";
 import { NavLink } from "react-router-dom";
 
 const MyOrders = () => {
-  const API = "https://65.2.175.146:4000/api/v1";
+  const API = "http://65.2.175.146:4000/api/v1";
   const [orders, setOrders] = useState(null);
   const config = {
     headers: {

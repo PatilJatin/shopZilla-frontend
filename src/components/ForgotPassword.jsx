@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const ForgotPassword = () => {
-  const API = "https://65.2.175.146:4000/api/v1";
+  const API = "http://65.2.175.146:4000/api/v1";
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const { token } = useParams();

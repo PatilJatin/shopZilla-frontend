@@ -7,7 +7,7 @@ import { useUserContext } from "../../context/userContext";
 
 const SignIn = () => {
   const { setAuthStatusAndUserProfile, setToken } = useUserContext();
-  const API = "https://65.2.175.146:4000/api/v1";
+  const API = "http://65.2.175.146:4000/api/v1";
   const history = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
