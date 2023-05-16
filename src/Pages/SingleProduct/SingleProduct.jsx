@@ -11,7 +11,7 @@ import StoreIcon from "@mui/icons-material/Store";
 import Stars from "../../components/Stars";
 import AddToCart from "../../components/AddToCart";
 
-const API = "http://65.2.175.146:4000/api/v1";
+const API = "https://65.2.175.146:4000/api/v1";
 const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
