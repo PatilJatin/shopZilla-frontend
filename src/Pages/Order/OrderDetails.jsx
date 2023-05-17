@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const OrderDetails = () => {
   const token = localStorage.getItem("token");
-  const API = "http://65.2.175.146:4000/api/v1";
+  const API = "http://localhost:4000/api/v1";
   const { orderId } = useParams();
   const [order, setOrder] = useState(null);
   const config = {

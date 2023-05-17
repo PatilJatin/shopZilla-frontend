@@ -27,7 +27,7 @@ const SignUp = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const API = "http://65.2.175.146:4000/api/v1";
+    const API = "http://localhost:4000/api/v1";
 
     if (!name || !email || !password || !photo) {
       toast.error("All fields are required");
