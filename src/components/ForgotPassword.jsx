@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const ForgotPassword = () => {
-  const API = "http://localhost:4000/api/v1";
+  const API = "https://shopzilla-z3p7.onrender.com/api/v1";
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const { token } = useParams();

@@ -14,7 +14,7 @@ const Order = () => {
     },
     withCredentials: true,
   };
-  const API = "http://localhost:4000/api/v1";
+  const API = "https://shopzilla-z3p7.onrender.com/api/v1";
   const [shippingInfo, setShippingInfo] = useState({
     name: "",
     address: "",

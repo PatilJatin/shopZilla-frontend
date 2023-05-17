@@ -7,7 +7,7 @@ import { useUserContext } from "../../context/userContext";
 
 const SignIn = () => {
   const { setAuthStatusAndUserProfile, setToken } = useUserContext();
-  const API = "http://localhost:4000/api/v1";
+  const API = "https://shopzilla-z3p7.onrender.com/api/v1";
   const history = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

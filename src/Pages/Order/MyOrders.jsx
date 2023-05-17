@@ -4,7 +4,7 @@ import FormatPrice from "../../helper/FormatPrice";
 import { NavLink } from "react-router-dom";
 
 const MyOrders = () => {
-  const API = "http://localhost:4000/api/v1";
+  const API = "https://shopzilla-z3p7.onrender.com/api/v1";
   const [orders, setOrders] = useState(null);
   const config = {
     headers: {

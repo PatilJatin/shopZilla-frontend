@@ -11,7 +11,7 @@ import StoreIcon from "@mui/icons-material/Store";
 import Stars from "../../components/Stars";
 import AddToCart from "../../components/AddToCart";
 
-const API = "http://localhost:4000/api/v1";
+const API = "https://shopzilla-z3p7.onrender.com/api/v1";
 const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();

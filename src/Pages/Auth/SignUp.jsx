@@ -27,7 +27,7 @@ const SignUp = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const API = "http://localhost:4000/api/v1";
+    const API = "https://shopzilla-z3p7.onrender.com/api/v1";
 
     if (!name || !email || !password || !photo) {
       toast.error("All fields are required");

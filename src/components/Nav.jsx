@@ -10,7 +10,7 @@ import axios from "axios";
 import ProfileModal from "./ProfileModal";
 
 const Nav = () => {
-  const API = "http://localhost:4000/api/v1";
+  const API = "https://shopzilla-z3p7.onrender.com/api/v1";
   const [toggle, setToggle] = useState(false);
   const { total_item } = useCartContext();
   const { isAuthenticated, userProfile, handleLogout, getToken } =

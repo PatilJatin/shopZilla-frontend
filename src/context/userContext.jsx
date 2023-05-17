@@ -11,7 +11,7 @@ const initialState = {
 };
 
 const UserProvider = ({ children }) => {
-  const API = "http://localhost:4000/api/v1";
+  const API = "https://shopzilla-z3p7.onrender.com/api/v1";
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const setAuthStatusAndUserProfile = (status, userData) => {
