@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import FormatPrice from "../helper/FormatPrice";
-import Stars from "./Stars";
 const ProductCart = (product) => {
   const {
     _id,
@@ -12,10 +11,7 @@ const ProductCart = (product) => {
     category,
     description,
     colors,
-    stars,
-    reviews,
   } = product;
-  console.log(product);
   return (
     <NavLink to={`/product/${_id}`} className={"my-1 bg-gray-100 mx-auto"}>
       <div className="flex max-w-2xl flex-col items-center rounded-md border md:flex-row">

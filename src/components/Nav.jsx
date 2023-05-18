@@ -19,7 +19,6 @@ const Nav = () => {
   const [user, setUser] = useState(null);
 
   const handleModal = async () => {
-    console.log("calling user");
     try {
       const token = getToken();
       const response = await axios.get(`${API}/userdashboard`, {
@@ -27,7 +26,6 @@ const Nav = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(response);
       setUser(response.data.user);
     } catch (error) {
       console.log(error);
@@ -87,7 +85,9 @@ const Nav = () => {
                   src="https://eliaslealblog.files.wordpress.com/2014/03/user-200.png?w=700"
                   alt="Dan_Abromov"
                 />
-                <span className="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-600 ring-1 ring-white"></span>
+                {isAuthenticated && (
+                  <span className="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-600 ring-1 ring-white"></span>
+                )}
               </NavLink>
             </li>
           )}

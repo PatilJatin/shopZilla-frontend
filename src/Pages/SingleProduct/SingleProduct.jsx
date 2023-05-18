@@ -30,7 +30,7 @@ const SingleProduct = () => {
     stars,
     stock,
   } = singleProduct;
-  console.log(singleProduct);
+
   useEffect(() => {
     getSingleProduct(`${API}/product/${id}`);
   }, []);
@@ -39,7 +39,7 @@ const SingleProduct = () => {
     <div className=" w-[100vw] py-6 bg-gray-200 text-black">
       <PageNavigation title={name} />
       <div className="product-container bg-gray-50  rounded-2xl w-[80%] mx-auto flex flex-wrap justify-around py-20">
-        <div className="image-container  basis-[40%] flex justify-center py-10">
+        <div className="image-container  basis-[50%] flex justify-center py-10">
           <ImageSlider images={images} />
         </div>
         <div className="product-details basis-[40%] space-y-3">
@@ -57,7 +57,7 @@ const SingleProduct = () => {
               />
             </del>
           </div>
-          <p className="text-heading pr-2 text-base font-bold md:pr-0 text-lg lg:pr-2 2xl:pr-0 ">
+          <p className="text-heading pr-2 font-bold md:pr-0 text-lg lg:pr-2 2xl:pr-0 ">
             Deal of the Day:{" "}
             <span>
               <FormatPrice price={price} />

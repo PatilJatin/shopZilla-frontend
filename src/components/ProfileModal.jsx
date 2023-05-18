@@ -5,7 +5,6 @@ const ProfileModal = ({ user, visible, onClose }) => {
     return null;
   }
   const { isAuthenticated, handleLogout } = useUserContext();
-  console.log("modal called", user);
   return (
     isAuthenticated && (
       <section

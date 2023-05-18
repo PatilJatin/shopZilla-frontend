@@ -76,7 +76,7 @@ const Home = () => {
   return (
     <section className="bg-primary-500">
       <HeroSection />
-      <div className="w-[80%] mx-auto">
+      <div className="w-[80%] mx-auto my-6">
         <h3 className="text-3xl text-white font-extrabold ">
           Apple at ShopZilla
         </h3>

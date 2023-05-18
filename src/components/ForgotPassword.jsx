@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const ForgotPassword = () => {
   const API = "https://shopzilla-z3p7.onrender.com/api/v1";
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const { token } = useParams();
+  const history = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -21,7 +24,6 @@ const ForgotPassword = () => {
         password,
         confirmPassword,
       });
-      console.log(response.data);
       history("/signin");
     } catch (error) {
       console.error(error);

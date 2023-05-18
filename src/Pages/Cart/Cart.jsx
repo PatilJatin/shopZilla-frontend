@@ -4,8 +4,11 @@ import CartAmountToggle from "../../components/CartAmountToggle";
 import FormatPrice from "../../helper/FormatPrice";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { NavLink } from "react-router-dom";
+import { useUserContext } from "../../context/userContext";
+import { toast } from "react-hot-toast";
 
 const Cart = () => {
+  const { isAuthenticated } = useUserContext();
   const {
     cart,
     removeItem,
@@ -15,7 +18,9 @@ const Cart = () => {
     shipping_fee,
     total_item,
   } = useCartContext();
-
+  if (!isAuthenticated) {
+    toast.error("Login first to place order");
+  }
   return (
     <div className="bg-gray-100 dark:bg-gray-900  dark:nx-bg-neutral-900">
       <div className="mx-auto max-w-2xl px-4 pt-16 pb-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -160,20 +165,21 @@ const Cart = () => {
                     )}
                   </dd>
                 </div>
-                {total_item > 0 ? (
-                  <NavLink to={"/order"}>
-                    <button
-                      type="submit"
-                      className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
-                    >
-                      Create Order{" "}
-                      <KeyboardDoubleArrowRightIcon
-                        className="ml-2"
-                        size={16}
-                      />
-                    </button>
-                  </NavLink>
-                ) : null}
+                {isAuthenticated &&
+                  (total_item > 0 ? (
+                    <NavLink to={"/order"}>
+                      <button
+                        type="submit"
+                        className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
+                      >
+                        Create Order{" "}
+                        <KeyboardDoubleArrowRightIcon
+                          className="ml-2"
+                          size={16}
+                        />
+                      </button>
+                    </NavLink>
+                  ) : null)}
               </dl>
             </div>
           </section>

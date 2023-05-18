@@ -30,7 +30,6 @@ const OrderDetails = () => {
     };
     fetchOrder();
   }, [orderId]);
-  console.log(order);
   return (
     order && (
       <div className="mx-auto my-4 max-w-6xl px-2 md:my-6 md:px-0 bg-white">

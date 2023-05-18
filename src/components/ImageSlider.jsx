@@ -18,7 +18,7 @@ const ImageSlider = ({ images = [{ secure_url: "" }] }) => {
   return (
     <div className="flex flex-col">
       <div className="w-[400px] flex items-center justify-center relative ">
-        <div className="absolute top-50% left-12 md:left-0 ">
+        <div className="absolute top-50%  md:left-[-1.5rem] ">
           <ArrowCircleLeftIcon onClick={prevImage} />
         </div>
         <img
@@ -26,9 +26,9 @@ const ImageSlider = ({ images = [{ secure_url: "" }] }) => {
           alt={images[currentIndex]?.id}
           width={"100%"}
           height={"300px"}
-          className="object-contain aspect-video mx-auto w-[380px] rounded-md"
+          className="object-contain aspect-video mx-auto w-[450px] rounded-md"
         />
-        <div className="absolute  top-50% right-12 md:right-0 ">
+        <div className="absolute  top-50% right-12 md:right-[-1.5rem] ">
           <ArrowCircleRightIcon onClick={nextImage} />
         </div>
       </div>

@@ -17,7 +17,6 @@ const SignIn = () => {
     try {
       const response = await axios.post(`${API}/login`, { email, password });
       if (response.status === 200) {
-        console.log(response);
         toast.success("Login successful");
         setToken(response.data.token);
         setAuthStatusAndUserProfile(true, response.data.user);

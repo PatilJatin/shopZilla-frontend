@@ -3,7 +3,9 @@ import { createContext } from "react";
 import { useContext, useEffect, useReducer } from "react";
 import reducer from "../reducers/userReducer";
 
+
 const UserContext = createContext();
+ 
 
 const initialState = {
   isAuthenticated: JSON.parse(localStorage.getItem("isAuthenticated")) || false,
@@ -40,12 +42,13 @@ const UserProvider = ({ children }) => {
 
   const handleLogout = async () => {
     try {
+       
       await axios.get(`${API}/logout`);
       deleteToken();
       localStorage.removeItem("isAuthenticated");
       localStorage.removeItem("userProfile");
       setAuthStatusAndUserProfile(false, {}); // Update state with logged out status
-      window.location.href = "/signin"; // Redirect to login page after logout
+    
     } catch (error) {
       console.error(error);
     }

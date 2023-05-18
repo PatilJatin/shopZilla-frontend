@@ -28,7 +28,7 @@ const MyOrders = () => {
     };
     fetchOrder();
   }, []);
-  console.log(orders);
+ 
   return (
     orders && (
       <div>

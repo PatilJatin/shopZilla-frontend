@@ -34,20 +34,20 @@ const SignUp = () => {
     } else if (password.length < 8) {
       toast.error("Password should have 8 Characters");
     }
-    console.log(name, email, password, photo);
+    
     const formData = new FormData();
     formData.append("name", name);
     formData.append("email", email);
     formData.append("password", password);
     formData.append("photo", photo);
-    console.log(formData, " ", "  method calling ");
+    
     try {
       const response = await axios.post(`${API}/signup`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-      console.log(response);
+      
       if (response.status === 200) {
         toast.success("Successfully registered");
         history("/");

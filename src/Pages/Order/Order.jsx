@@ -54,6 +54,15 @@ const Order = () => {
   const orderIdRef = useRef(null);
   const handlePayment = async () => {
     try {
+      if (
+        !shippingInfo.name ||
+        !shippingInfo.address ||
+        !shippingInfo.city ||
+        !shippingInfo.postalCode ||
+        !shippingInfo.state
+      ) {
+        toast.error("Fill all Fields");
+      }
       // Make a POST request to createOrder endpoint
       const response = await axios.post(
         `${API}/create/order`,
@@ -71,11 +80,10 @@ const Order = () => {
           },
         }
       );
-      console.log(response.data);
 
       // Get the order ID and Razorpay order ID
       orderIdRef.current = response.data.order._id;
-      console.log(response.data.order._id);
+
       const razorpayOrderId = response.data.order.paymentInfo;
 
       // Load the Razorpay script asynchronously
@@ -99,8 +107,7 @@ const Order = () => {
           handler: async function (response) {
             try {
               // Update the paymentInfo in the order
-              console.log("orderId", orderIdRef.current);
-              console.log("response", response);
+
               const res = await axios.put(
                 `${API}/orders/${orderIdRef.current}`,
                 {
@@ -113,7 +120,6 @@ const Order = () => {
                 }
               );
 
-              console.log(res.data);
               toast.success("Order is placed");
               // Redirect to the order success page
               history(`/order_details/${res.data.order._id}`);
