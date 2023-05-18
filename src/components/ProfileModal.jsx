@@ -21,7 +21,7 @@ const ProfileModal = ({ user, visible, onClose }) => {
           <img
             src={user?.photo.secure_url}
             alt=""
-            className="w-[200px] h-[200px] rounded-full object-fill"
+            className="w-[200px] h-[200px] rounded-full object-fill mx-auto"
           />
           <p>
             Email :{" "}
