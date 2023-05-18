@@ -6,12 +6,7 @@ import { NavLink } from "react-router-dom";
 const MyOrders = () => {
   const API = "https://shopzilla-z3p7.onrender.com/api/v1";
   const [orders, setOrders] = useState(null);
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    withCredentials: true,
-  };
+ 
   useEffect(() => {
     const fetchOrder = async () => {
       try {

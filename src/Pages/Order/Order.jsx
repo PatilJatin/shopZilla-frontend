@@ -8,12 +8,7 @@ import toast from "react-hot-toast";
 const Order = () => {
   const history = useNavigate();
   const token = localStorage.getItem("token");
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    withCredentials: true,
-  };
+ 
   const API = "https://shopzilla-z3p7.onrender.com/api/v1";
   const [shippingInfo, setShippingInfo] = useState({
     name: "",
