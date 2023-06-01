@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import FormatPrice from "../../helper/FormatPrice";
@@ -25,6 +25,7 @@ const OrderDetails = () => {
     };
     fetchOrder();
   }, [orderId]);
+
   return order ? (
     <div className="mx-auto my-4 max-w-6xl px-2 md:my-6 md:px-0 bg-white">
       <h2 className="text-3xl font-bold">Order Details</h2>
@@ -117,7 +118,7 @@ const OrderDetails = () => {
                 href={`${API}/orders/${order._id}/invoice`}
                 target="_blank"
                 type="button"
-                className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black" rel="noreferrer"
               >
                 Download Invoice
               </a>

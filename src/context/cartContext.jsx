@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import reducer from "../reducers/cartReducer";
 const CartContext = createContext();
+
 const getLocalCartData = () => {
   let localCartData = localStorage.getItem("productCart");
   if (
@@ -18,6 +19,7 @@ const initialState = {
   total_amount: "",
   shipping_fee: 500,
 };
+// eslint-disable-next-line react/prop-types
 const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const addToCart = (_id, pickColor, productsQuantity, product) => {

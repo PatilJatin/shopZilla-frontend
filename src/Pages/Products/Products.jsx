@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+
 import Filter from "../../components/Filter";
 import Sort from "../../components/Sort";
 import ProductList from "../../components/ProductList";
@@ -6,7 +6,7 @@ import { useFilterContext } from "../../context/filterContext";
 
 const Products = () => {
   const { filterProducts } = useFilterContext();
-
+  
   return (
     <div className=" bg-gray-50">
       <div className="w-full mx-auto  product-container flex">
